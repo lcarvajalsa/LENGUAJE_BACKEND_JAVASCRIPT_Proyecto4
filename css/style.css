@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;/*derecha izquierda*/
+    align-items: center;/*arriba abajo*/
+    background-color:aliceblue;
+
+}
+.reloj {
+    border: 0.5rem solid azure;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius:  5vh;
+    font-family: monospace;
+    font-size: 2rem;
+    color: rgb(17, 20, 13);
+    margin-top: 100px; /*espacio fuera de la caja */
+}
+
+.seguro{
+    transform: scaleX(-1) scaleY(-1);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.contenedor{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/reloj.png");
+    background-size:cover;
+    border: 0.5rem solid blanchedalmond;
+    border-radius: 20vh ;
+    /* 1er parametro, eje x, 2do parametro eje y, 3er parametro difuminacion, 4to parametro tamaño de la sobra */
+    box-shadow: inset 0px 0px 20px 5px chocolate;   
+}
+
+/* before nos sirve para dibujar elemntos dentro del html desde el css */
+.contenedor::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: darkgray;
+    border-radius: 50vh;
+    z-index: 100;
+}
+
+.hora{
+    width: 140px;
+    height: 140px;
+}
+
+.hora::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 90px;
+    background-color:fuchsia;
+    z-index: 10;
+    border-radius: 50vh;
+}
+
+.minuto{
+    width: 250px;
+    height: 220px;
+}
+
+.minuto::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 130px;
+    background-color:goldenrod;
+    z-index: 11;
+    border-radius: 50vh;
+}
+
+.segundo{
+    width: 250px;
+    height: 250px;
+}
+
+.segundo::before{
+    content: '';
+    position: absolute;
+    width: 1.8px;
+    height: 150px;
+    background-color: honeydew;
+    z-index: 12;
+    border-radius: 50vh;
+}
+
+.hora,.minuto,.segundo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50vh;
+}
