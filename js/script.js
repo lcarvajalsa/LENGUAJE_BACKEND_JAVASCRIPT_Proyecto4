@@ -4,12 +4,12 @@ function calcularTiempo(){
     let hora=tiempo.getHours();
     let minuto=tiempo.getMinutes();
     let segundo= tiempo.getSeconds();
-
-    hora = hora < 10 ? "0" + hora : hora;
-    minuto = minuto < 10 ? "0" + minuto : minuto;
-    segundo = segundo < 10 ? "0" + segundo : segundo;
-
-    let pantallaReloj=hora+":"+minuto+":"+segundo;
+    // Se crea variable para guardar am o pm 
+    ap = (hora < 12) ? "<span>AM</span>" : "<span>PM</span>";
+    hora = (hora == 0) ? 12 : hora;
+    hora = (hora > 12) ? hora - 12: hora;
+    
+    let pantallaReloj=hora+":"+minuto+":"+segundo+ ":"+ap;
     let relojdigital= document.querySelector(".reloj");
     relojdigital.innerHTML=pantallaReloj;
 }
